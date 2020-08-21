@@ -134,7 +134,7 @@
   visible: true
 
 - name: rogeriobastos
-  role: Pwn, Reversing, Programming, Networking, Web Hacking, Mobile
+  role: Pwn, Reversing, Networking, Web Hacking, Mobile
   img: "/assets/images/rogeriobastos.jpg"
   gitlab: rogeriobastos
   linkedin: rogeriocbastos
