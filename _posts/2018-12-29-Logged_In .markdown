@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "Logged In"
+date:   2018-12-29 18:00:51 -0200
+categories: [CTF,WEB,35C3 CTF]
+author: andersongomes001
+event: 35C3 CTF
+tags: [CTF,WEB,35C3 CTF]
+description: "Phew, we totally did not set up our mail server yet. This is bad news since nobody can get into their accounts at the moment..."
+image: "/assets/images/writeups/bd909f52dcb26a1c202aeba7ce9c643d.png"
+---
+## Desafio:
+
+Phew, we totally did not set up our mail server yet. This is bad news since nobody can get into their accounts at the moment... It'll be in our next sprint. Until then, since you cannot login: enjoy our totally finished software without account.
+
+http://35.207.189.79/
+
+
+## Solução:
+
+É comum encontrar sistemas com comfigurações dafault, e o primeiro usuário que fiz o teste foi o `admin`.
+
+{:refdef: style="text-align: center;"}
+![Branching](/assets/images/writeups/bd909f52dcb26a1c202aeba7ce9c643d.png)
+{:refdef}
+
+Interceptamos o request com Burp Suite.
+
+{:refdef: style="text-align: center;"}
+![Branching](/assets/images/writeups/9b1b39d6eb04b1892fcdb70b71b1dfb2.png)
+{:refdef}
+
+A resposta foi um `Magic code`.
+
+{:refdef: style="text-align: center;"}
+![Branching](/assets/images/writeups/f1caab0a83e3bd5998c983b9fbf53f2c.png)
+{:refdef}
+
+Agora vamos submeter o `Magic code`.
+
+{:refdef: style="text-align: center;"}
+![Branching](/assets/images/writeups/a42efef2cb24e66cd4c9d558c18dc963.png)
+{:refdef}
+E no Headers podemos ver a flag no `Set-Cookie`.
+{:refdef: style="text-align: center;"}
+![Branching](/assets/images/writeups/3838fda9ecba86b7f0ffc161a6a1dc2c.png)
+{:refdef}
+
+Flag: 35C3_LOG_ME_IN_LIKE_ONE_OF_YOUR_FRENCH_GIRLS

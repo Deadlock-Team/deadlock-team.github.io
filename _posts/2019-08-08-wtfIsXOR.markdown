@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "WTF is XOR?"
+date:   2019-07-02 16:35:00 -0200
+categories: [WTF]
+author: solitude
+event: ""
+tags: [WTF]
+description: "XOR (Exclusive OR) é um operador lógico booleano que recebe dois binários como entrada, essa operação resulta em true sempre que uma das duas entradas, mas não ambas, são true."
+---
+
+# WTF is XOR?
+XOR (Exclusive OR) é um operador lógico booleano que recebe dois binários como entrada, essa operação resulta em true sempre que uma das duas entradas, mas não ambas, são true. Nesse artigo, focarei em escrever sobre o uso do XOR para a criptografia. Na criptografia, o XOR é geralmente representado por ⊕, e sua fórmula é apresentada da seguinte forma:
+
+### Pi = Ki ⊕ Ci
+
+**Pi** é o texto claro  
+**Ki** é o bit chave que definirá se Pi será ou não invertido.  
+**Ci** é o texto cifrado resultante da operação
+
+O i é o indice. Apesar de o XOR receber apenas dois valores como entrada, na maioria das vezes estaremos trabalhando com mais de um bit.
+
+Exemplos:
+
+    0 ⊕ 0 = 0  
+    1 ⊕ 0 = 1  
+    0 ⊕ 1 = 1  
+    1 ⊕ 1 = 0
+
+Como os valores de entrada serão sempre 1 ou 0 (True ou False), podemos simplificar a memorização do operador XOR com a seguinte frase: Valores iguais, false. Valores diferentes, true.
+
+Apesar de receber apenas dois bits como entrada, o XOR pode ser aplicado sobre uma quantidade maior que apenas dois bits, nesse caso, o texto claro e a chave são ‘convertidos’ para sua representação binária, e então a operação é feita bit a bit, por isso o nome bitwise XOR.
+
+A maioria das linguagens de programação oferece um operador bitwise XOR, em python usa-se o ^ para numeros inteiros:
+
+    >>> 20 ^ 10  
+    30
+
+O python resume nosso trabalho ao trazer o resultado como um valor em sua representação decimal, mas a operação por trás dos panos é feita assim:
+
+    20 ⊕ 10 = 00010100 ⊕ 00001010  
+    30 = 00011110
+
+### Aplicação a criptografia
+
+Apesar de parecer muito simples, o XOR é utilizado num esquema de criptografia chamado one-time pad, que consiste basicamente apenas do XOR. Esse nome se da devido ao fato de que a chave ou ‘pad’, é uma sequência de bits aleatórios, e a segurança desse esquema depende exclusivamente do uso do pad uma única vez, por isso o nome one-time pad. Em sua simplicidade, esse esquema fornece uma das melhores possibilidades de segurança. Se os bits do pad forem verdadeiramente aleatórios, isto é, uma vez impossibilitada a chance de um atacante ser capaz de prever o pad, e sendo ele usado uma única vez, qualquer um que tenha acesso a cifra será incapaz de saber qualquer coisa sobre o texto claro.
+
+Vejamos um exemplo do XOR usado para cifrar uma palavra. No nosso exemplo, o texto claro a ser criptografado sera “MEOW” e a chave usada sera “GATO”. Para fins didáticos, iremos fingir que GATO é uma sequência de bits verdadeiramente aleatória.
+
+    Texto claro: MEOW  
+    Chave: GATO
+
+Cada letra possui um byte, ou 8 bits. Isso significa que para aplicar o XOR entre MEOW e GATO, cada letra deve ser convertida para uma cadeia de bits e passar bit a bit. Vejamos o resultado do XOR das cadeias de bits de M e G:
+
+    TEXTO (M) = 01001101  
+    CHAVE (G) = 01000111  
+    CIFRA (C) = 00001010
+
+C é o texto cifrado, ou XOR entre M e G.
+
+Perceba que para fazer a operação inversa, isto é, recuperar o texto claro, basta fazer o XOR entre a cifra e a chave:
+
+    CIFRA = 00001010  
+    CHAVE = 01000111  
+    TEXTO = 01001101
+
+Por isso a segurança depende exclusivamente da chave ser verdadeiramente aleatória. Usada corretamente, um atacante que tivesse acesso ao texto cifrado não poderia saber nada sobre o texto original sem a chave. A isso dá-se o nome de segredo perfeito.
+
+No exemplo, convenientemente escolhi duas palavras do mesmo tamanho, ou seja, com a mesma quantidade de bits. E isso é uma dos requerimentos do one-time pad, a chave deve ter o mesmo tamanho do texto original, em outro exemplo, vamos supor que queiramos fazer um XOR entre nossa senha “SEGREDO” e nossa chave seja “DADO”:
+
+    TEXTO: SEGREDO  
+    CHAVE: DADODAD
+
+Nesse caso, repetimos os caracteres faltantes de nossa chave para que o tamanho seja igual ao texto original.
+
+### Segredo perfeito?
+
+Para explicar que é impossível que um atacante recupere o texto claro sem a chave, pensemos na seguinte situação: Jose quer enviar uma mensagem para Maria, e Fernandinho quer saber do que se trata:
+
+![cipherrr.png](https://solitudelab.files.wordpress.com/2019/08/cipherrr.png?w=756)
+
+Fernandinho teve acesso a cifra, mas como dissemos anteriormente, é incapaz de saber qualquer coisa sobre o texto claro, isso acontece porquê os bits da chave são verdadeiramente aleatórios, portanto é impossível saber se o bit original de cada posição da cifra era 1 ou 0. Nesse cenário, a possibilidade do bit cifrado ser 1 ou 0 é a mesma, e isso faz do one-time pad um esquema incondicionalmente seguro, isto é, não há cripto análise aplicável, não é possível quebrá-lo, é o segredo perfeito.
+
+### Verdadeiramente aleatório?
+
+Um dos grandes problemas do one-time pad é a necessidade de gerar bits verdadeiramente aleatórios. Isso torna seu uso inviável em sistemas com muitos usuários, a criação de grandes quantidades de chaves é impraticável. Outro grande problema é a distribuição e proteção dessas chaves, pois a cada nova mensagem, ha uma nova chave que não poderá ser reutilizada.
+
+Criar uma sequência de dados verdadeiramente aleatória só é possível utilizando elementos físicos. Temos como exemplo o Random.org, que promete utilizar aleatoriedade baseada em barulhos da atmosfera.
+
+### Pseudo aleatório?
+
+A maior parte de dados ‘aleatórios’ gerados computacionalmente não são verdadeiramente aleatórios, os valores podem ser previsíveis pois utilizam uma fórmula matemática.
+
+### Ataques ao esquema
+
+Como citado anteriormente, esse esquema fornece o segredo perfeito, porém, isso depende da aleatoriedade da chave, e de que seja utilizada uma única vez.
+
+Usar dados que não são verdadeiramente aleatórios não tornam necessariamente o esquema inseguro, porém, isso retira a propriedade do segredo perfeito. Dependendo da forma como os bits são gerados, um atacante com recursos computacionais pode ser capaz de brutar a chave e recuperar o texto claro.
+
+### Reutilizar o a chave
+
+Reutilizar o pad do one-time pad é o maior problema de segurança, isso significa que um atacante que possua duas cifras geradas com a mesma chave pode aplicar o XOR entre elas e obter informações sobre o texto claro:
+
+![1](https://solitudelab.files.wordpress.com/2019/08/1.png?w=756)![2](https://solitudelab.files.wordpress.com/2019/08/2.png?w=756)![3](https://solitudelab.files.wordpress.com/2019/08/3.png?w=756)
+
+No exemplo acima, um atacante seria capaz de colher informações sobre o texto em claro original ao fazer o XOR (F) entre as cifras (B) e (C), que foram geradas com a mesma chave (E). Isso implica num ataque chamado crib-dragging, onde basicamente um atacante tentaria encaixar os ‘cribs’ (pequenas sequências que acontecem com mais probabilidade no idioma alvo), ‘arrastando-os’ em cada espaço em busca de um encaixe, isso significa que uma vez encontrada uma das cifras originais, seria possível recuperar a chave, e devido a sua reutilização, todos os dados cifrados com a mesma.
+
+TL;DR
+
+XOR (Exclusive OR) é um operador lógico booleano que recebe dois binários como entrada, essa operação resulta em true sempre que uma das duas entradas, mas não ambas, são true. É utilizado num esquema criptográfico chamado one-time pad, cuja segurança depende exclusivamente da aleatoriedade desse pad, e que seja utilizado uma única vez. Nesse cenário ideal, o one-time pad é um esquema incondicionalmente inseguro, e um atacante é incapaz de aplicar qualquer tipo de análise, sendo portanto considerado um esquema inquebrável, ou segredo perfeito. Apesar de sua eficácia, sua aplicação prática é inviável nos dias atuais, devido a dificuldade de gerar grandes quantidades chaves realmente aleatórias a cada nova comunicação. O esquema só é seguro se for utilizado corretamente, um grande problema de segurança é a reutilização das chaves, que implica na possibilidade de um atacante comprometer o esquema através do XOR entre cifras geradas com a mesma chave, e uma vez que tenha acesso a um dos valores originais, seria possível recuperar a chave, e consequentemente, todas as cifras geradas com ela.
+
+Fontes:
+
+Laurens Van Houtven (lvh), Cripto101
+

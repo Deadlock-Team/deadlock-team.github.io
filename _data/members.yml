@@ -1,0 +1,159 @@
+# Members
+
+- name: Gustavo / cxzaqwed
+  role: Crypto, Reversing
+  img: "/assets/images/gustavo.jpg"
+  github: cxzaqwed
+  linkedin: gustavo-de-souza-27830b103
+  email: cxzaqwed@protonmail.ch
+  telegram: "cxzaqwed"
+  youtube:
+  bio: Acho que tive sorte em descobrir minha paixão por tecnologia ainda quando eu era pequeno, e mais ainda em ter a oportunidade de me formar nessa área. Robôs e computadores sempre me fascinaram a ponto de desmontar meus brinquedos e observar seu funcionamento incrivelmente estruturado através do trabalho entre peças e código. Sempre foi meu sonho aprender a criar algo assim, e agora, ainda acordo alguns dias sem acreditar que consegui me tornar um desses magos que criam coisas tecnologicamente incríveis.
+  url: http://cxzaqwed.github.io
+  visible: true
+
+- name: Fernando / moraes
+  role: Forensics, Steganography, Miscellaneous, Crypto
+  img: "/assets/images/fernando.jpeg"
+  github: fernandormoraes
+  linkedin: fernando-moraes-4aab55135
+  email: fernandomoraesprc@gmail.com
+  telegram: "fernandomoraesrc"
+  youtube: 
+  bio: Movido por criar e modificar, estudante de Ciência da Computação e entusiasta da área de segurança da informação, associando isso a minha competitividade iniciei nos CTF's em 2017 e continuei até hoje tamanha a satisfação ao enfrentar os desafios.
+  url: 
+  visible: true
+
+- name: Eliabe / lynfs
+  role: Web Hacking, Miscellaneous
+  img: "/assets/images/eliabe.jpg"
+  github: Lynfs
+  linkedin: eliabe-carlos-4a8316164
+  email: lynfs@protonmail.com
+  telegram: "lynfs"
+  youtube:
+  bio: Entusiasta no estudo da segurança da informação, aluno do curso de Bacharelado em sistemas da informação na UFRPE, e técnico em análise e desenvolvimento de sistemas pela ETE Pe.
+  url: http://lynfs.github.io
+  visible: true
+
+- name: Filipe Messias / fm3ssias
+  role: Programming, Mobile, Forensics, Networking, Miscellaneous
+  img: "/assets/images/filipe.jpg"
+  github: fm3ssias
+  linkedin: fmessias
+  email: filipe.messias@protonmail.com
+  telegram: "fm3ssias"
+  youtube:
+  twitter: fm3ssias
+  bio: Formado em Ciência da Computação e com experiência em desenvolvimento mobile (Android). Trabalhando atualmente com segurança de redes, analises forenses e fascinado por segurança ofensiva.
+  url: http://fm3ssias.github.io
+  visible: true
+
+- name: JJ Lima / Sql3t0
+  role: Reversing, Web Hacking
+  img: "/assets/images/jjlima.jpg"
+  github: sql3t0
+  linkedin: 
+  email: dj.sqleto@gmail.com
+  telegram: "Sql3t0"
+  youtube: https://www.youtube.com/user/sqleto1
+  bio: 
+  url: 
+  visible: true
+
+- name: Anderson / Necromanderson
+  role: Web Hacking, Miscellaneous, Networking
+  img: "/assets/images/anderson.jpg"
+  github: andersongomes001
+  linkedin: andersongomes001
+  email: andersongomes001@protonmail.com
+  telegram: "Necromanderson"
+  youtube: https://www.youtube.com/channel/UCE2yngKH9V6f3YG86Jy2DqQ
+  bio: Professional experience with PHP language for medium-sized projects, experience in Java development, Android, nodejs, Angular.
+  url: 
+  visible: true
+
+- name: Gabriel / glfms
+  role: Forensics, Miscellaneous
+  img: "/assets/images/gabriel.jpg"
+  github: glfms
+  linkedin: 
+  email: glfms@protonmail.com
+  telegram: "glfms"
+  youtube: 
+  bio: 
+  url: 
+  visible: false
+
+- name: Alex Andrade / solitude
+  role: Web Hacking, Crypto
+  img: "/assets/images/alex.jpg"
+  github: 
+  linkedin: alexandradew
+  email: 
+  telegram: "solitudelab"
+  youtube: 
+  bio: 
+  url: https://solitudelab.wordpress.com/
+  visible: true
+
+- name: Matheus Aranha / coredump
+  role: Crypto, Networking, Web Hacking, Pwn
+  img: "/assets/images/aranha.jpg"
+  github: mattslv
+  linkedin: mattslv
+  email: aranha.mss@gmail.com
+  telegram: "Aranha5"
+  youtube: 
+  bio: Apaixonado por construir e quebrar 'coisas' para aprender como elas funcionam, sou grande entusiasta da área de segurança da informação e desenvolvimento de pesquisa aplicada nas áreas de criptografia e privacidade.
+  url: http://mattslv.github.io
+  visible: true
+
+- name: Renan / EffectRenan
+  role: Web Hacking, Pwn, Reverse, Programming
+  img: "/assets/images/renan.jpeg"
+  github: EffectRenan
+  linkedin: effectrenan
+  email: 
+  telegram: "Effect_Renan"
+  youtube: 
+  bio: 
+  url: https://effectrenan.com
+  visible: true
+
+- name: Gabriel Ferreira / madfrr
+  role: Programming, Pwn
+  img: "/assets/images/madfrr.jpeg"
+  github: MadFerreira
+  linkedin: gabriel-sergio-ferreira
+  email: gs_ferreira@id.uff.br
+  telegram: "gs_ferreira"
+  youtube: 
+  bio: Estudante de Ciência da Computação pela Universidade Federal Fluminense(UFF)
+  url: 
+  visible: true
+
+- name: rogeriobastos
+  role: Pwn, Reversing, Programming, Networking, Web Hacking, Mobile
+  img: "/assets/images/rogeriobastos.jpg"
+  gitlab: rogeriobastos
+  linkedin: rogeriocbastos
+  email: 
+  telegram: 
+  youtube: 
+  twitter: roger_bast
+  bio: 
+  url: https://rogeriobastos.gitlab.io/
+  visible: true
+
+- name: Alvaro E. Afonso Filho / Mouse_Bl0ck
+  role: Pwn, Miscellaneous, Programming
+  img: "/assets/images/mouse_bl0ck.jpg"
+  github: AlvaroAfonso62
+  linkedin: alvaro-afonso83
+  email: 
+  telegram: "Alvarofilho236"
+  youtube: 
+  bio: 
+  url: 
+  visible: true

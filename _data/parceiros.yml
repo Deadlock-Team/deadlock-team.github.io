@@ -1,0 +1,11 @@
+# Parceiros
+
+- name: O Analista
+  site: https://www.oanalista.com.br/
+  img: "/assets/images/oAnalista.png"
+  visible: true
+
+- name: CTF-BR
+  site: https://www.ctf-br.org/
+  img: "/assets/images/ctf-br.gif"
+  visible: true
